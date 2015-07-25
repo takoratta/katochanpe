@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
+
+    <title>我が家の防災計画メーカー</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+		<style>
+					/* ----- Overlay ----- */
+
+			/* the overlayed element */
+			.apple_overlay {
+
+			    /* initially overlay is hidden */
+			    display:none;
+
+			    /* growing background image */
+			    background-image:url(white.png);
+
+			    /*
+			      width after the growing animation finishes
+			      height is automatically calculated
+			      */
+			    /*width:640px;*/
+			    width:640px;
+
+			    /* some padding to layout nested elements nicely  */
+			    padding:35px;
+
+			    /* a little styling */
+			    /*font-size:11px;*/
+			}
+
+			/* default close button positioned on upper right corner */
+			.apple_overlay .close {
+			    background-image:url(close.png);
+			    position:absolute; right:5px; top:5px;
+			    cursor:pointer;
+			    height:35px;
+			    width:35px;
+			}
+
+
+			/* Semi transparent image for overlay */
+			#overlay {
+			  background-image:url(transparent.png);
+			  color:#efefef;
+			  height:450px;
+			}
+			/* Container for external contents.  Use a vertical scroll if needed */
+			div.contentWrap {
+			  height:441px;
+			  overflow:auto;
+			  /*float:left;*/
+			}
+
+
+		</style>
+
+	</head>
+	<body>
+	<div class="jumbotron">
+  		<h1>我が家の防災計画</h1>
+	</div>
+	<ul class="nav nav-pills nav-justified">
+	  <li role="presentation" class="active"><a href="#">なにかおきるまえに</a></li>
+	  <li role="presentation"><a href="output.html">なにかおきたら</a></li>
+	</ul>
+	<br/>
+	<br/>
+  	<div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-1"></div>
+  		<div class="col-md-4">
+  			<a href="checklist.html" rel="#overlay" style="text-decoration:none">
+				<button class="btn btn-default btn-lg" type="button" aria-haspopup="true" aria-expanded="false" style="width:100%">そろえておくものをかくにんしょう</button>
+			</a>
+              <div class="apple_overlay" id="overlay">
+                <div class="contentWrap"></div>
+              </div>
+		</div>
+		<div class="col-md-7">
+		  	<!-- <span class="input-group-addon" id="basic-addon1"></span> -->
+		  	<input type="text" class="form-control" placeholder="">
+		  	<div id="checklist"></div>
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="addChecklist();"></span>
+<!-- 		  	<input type="text" class="form-control" placeholder="">
+		  	<input type="text" class="form-control" placeholder="">
+		  	<input type="text" class="form-control" placeholder="">
+		  	<input type="text" class="form-control" placeholder=""> -->
+		 </div>
+	</div>
+	</div>
+
+	<br/><br/>
+
+ 	<div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-1">
+  		</div>
+  		<div class="col-md-4">
+  			<a href="contact.html" rel="#overlay" style="text-decoration:none">
+				<button class="btn btn-default btn-lg" type="button" aria-haspopup="true" aria-expanded="false" style="width:100%">かぞくのれんらくさきをかくにんしょう</button>
+			</a>
+            	<div class="apple_overlay" id="overlay">
+                	<div class="contentWrap"></div>
+            	</div>
+		</div>
+		<div class="col-md-7">
+			<div class="col-md-4">
+			  	<!-- <input type="text" class="form-control" placeholder="おとうさん ▼"> -->
+
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control" aria-label="...">
+    </div><!-- /input-group -->
+
+		  	</div>
+			<div class="col-md-8">
+			  		<input type="text" class="form-control" placeholder="でんわばんごう">
+		  	</div>
+		  	<div id="contact"></div>
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="addContact();"></span>
+		</div>
+<!-- 		<div class="col-md-2">
+		</div>
+ -->	</div>
+	</div>
+
+
+	<br/><br/>
+
+ 	<div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-1"></div>
+  		<div class="col-md-4">
+  			<a href="evacuation.html" rel="#overlay" style="text-decoration:none">
+				<button class="btn btn-default btn-lg" type="button" aria-haspopup="true" aria-expanded="false" style="width:100%">ひなんばしょをかくにんしよう</button>
+			</a>
+           	<div class="apple_overlay" id="overlay">
+               	<div class="contentWrap"></div>
+           	</div>
+		</div>
+		<div class="col-md-7">
+			<p>じたくのじゅうしょ：<input type="text"></p>
+			<p><a href="http://www.google.co.jp/"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>かぞくでひなんろをつくろう</a></p>
+
+		  	<input type="text" class="form-control" placeholder="">
+		  	<div id="evacuation"></div>
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="addEvacuation();"></span>
+		</div>
+		<!-- <div class="col-md-2"></div> -->
+	</div>
+	</div>
+<!-- 	<button class="btn btn-default btn-lg" type="button" aria-haspopup="true" aria-expanded="false">かぞくのれんらくさき</span>
+  	</button>
+  	<br />
+
+  	<button class="btn btn-default btn-lg" type="button" aria-haspopup="true" aria-expanded="false">ひなんばしょのかくにん</span>
+  	<br/>
+  	</button> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	function addChecklist()
+	{
+	    var div_element = document.createElement("div");
+	    div_element.innerHTML = '<input type="text" class="form-control" placeholder="">';
+	    var parent_object = document.getElementById("checklist");
+	    parent_object.appendChild(div_element);
+	}
+	function addContact()
+	{
+	    var div_element = document.createElement("div");
+	    div_element.innerHTML = '<input type="text" class="form-control" placeholder="">';
+	    var parent_object = document.getElementById("contact");
+	    parent_object.appendChild(div_element);
+	}
+	function addEvacuation()
+	{
+	    var div_element = document.createElement("div");
+	    div_element.innerHTML = '<input type="text" class="form-control" placeholder="">';
+	    var parent_object = document.getElementById("evacuation");
+	    parent_object.appendChild(div_element);
+	}
+
+
+    $(function() { // overlay
+      $("a[rel]").overlay({
+
+        mask: 'gray',
+        effect: 'apple',
+
+        onBeforeLoad: function() {
+
+        var wrap = this.getOverlay().find(".contentWrap");
+
+        wrap.load(this.getTrigger().attr("href"));
+      }
+
+    }); // overlay
+	});
+
+
+</script>
+	</body>
+
