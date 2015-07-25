@@ -14,61 +14,18 @@
 
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-		<style>
-					/* ----- Overlay ----- */
-
-			/* the overlayed element */
-			.apple_overlay {
-
-			    /* initially overlay is hidden */
-			    display:none;
-
-			    /* growing background image */
-			    background-image:url(white.png);
-
-			    /*
-			      width after the growing animation finishes
-			      height is automatically calculated
-			      */
-			    /*width:640px;*/
-			    width:640px;
-
-			    /* some padding to layout nested elements nicely  */
-			    padding:35px;
-
-			    /* a little styling */
-			    /*font-size:11px;*/
-			}
-
-			/* default close button positioned on upper right corner */
-			.apple_overlay .close {
-			    background-image:url(close.png);
-			    position:absolute; right:5px; top:5px;
-			    cursor:pointer;
-			    height:35px;
-			    width:35px;
-			}
-
-
-			/* Semi transparent image for overlay */
-			#overlay {
-			  background-image:url(transparent.png);
-			  color:#efefef;
-			  height:450px;
-			}
-			/* Container for external contents.  Use a vertical scroll if needed */
-			div.contentWrap {
-			  height:441px;
-			  overflow:auto;
-			  /*float:left;*/
-			}
-
-
-		</style>
-
+		 <link href="style.css" rel="stylesheet">
 	</head>
 	<body>
+	  <div class="container-fluid">
+	  	<div class="row">
+	  		<div class="col-md-11">
+	  		</div>
+	  		<div class="col-md-1">
+	  			<span class="glyphicon glyphicon-user" aria-hidden="true" onclick="signIn();"></span>加藤
+	  		</div>
+	  	</div>
+	  </div>
 	<div class="jumbotron">
   		<h1>我が家の防災計画</h1>
 	</div>
