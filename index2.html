@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
+
+    <title>我が家の防災計画メーカー</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		 <link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+	  <div class="container-fluid">
+	  	<div class="row">
+	  		<div class="col-md-11">
+	  		</div>
+	  		<div class="col-md-1">
+	  			<span class="glyphicon glyphicon-user" aria-hidden="true" onclick="signIn();"></span>加藤
+	  		</div>
+	  	</div>
+	  </div>
+	<div class="jumbotron">
+  		<h1>我が家の防災計画</h1>
+	</div>
+	<ul class="nav nav-pills nav-justified">
+	  <li role="presentation" class="active"><a href="#">なにかおきるまえに</a></li>
+	  <li role="presentation"><a href="output.html">なにかおきたら</a></li>
+	</ul>
+	<br/>
+	<br/>
+  	<div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-1"></div>
+
+  		<div class="col-md-4">
+			<div class="media">
+			  <div class="media-left">
+			    <a href="checklist.html" rel="#overlay" style="text-decoration:none">
+			      <img class="media-object" src="img/checklist64.png" alt="もちもの">
+			    </a>
+			  </div>
+			  <div class="media-body">
+			    <h4 class="media-heading">そろえておくものをかくにんしょう</h4>
+			    よういしておくものを書いておこう
+			  </div>
+			</div>
+            <div class="apple_overlay" id="overlay">
+                <div class="contentWrap"></div>
+            </div>
+		</div>
+
+
+		<div class="col-md-7">
+		  	<input type="text" class="form-control" placeholder="">
+		  	<div id="checklist"></div>
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="addChecklist();"></span>
+		 </div>
+	</div>
+	</div>
+
+	<br/><br/>
+
+ 	<div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-1">
+  		</div>
+  		<div class="col-md-4">
+
+			<div class="media">
+			  <div class="media-left">
+			    <a href="contact.html" rel="#overlay" style="text-decoration:none">
+			      <img class="media-object" src="img/family64.png" alt="かぞく">
+			    </a>
+			  </div>
+			  <div class="media-body">
+			    <h4 class="media-heading">かぞくのれんらくさきをかくにんしょう</h4>
+			    おとうさん や おかあさん のれんらくさきを書いておこう
+			  </div>
+			</div>
+            <div class="apple_overlay" id="overlay">
+                <div class="contentWrap"></div>
+            </div>
+
+		</div>
+
+		<div class="col-md-7">
+	  		<input type="text" class="form-control" placeholder="でんわばんごう">
+		  	<div id="contact"></div>
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="addContact();"></span>
+		</div>
+		</div>
+	</div>
+
+	<br/><br/>
+
+ 	<div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-1"></div>
+  		<div class="col-md-4">
+			<div class="media">
+			  <div class="media-left">
+			    <a href="evacuation.html" rel="#overlay" style="text-decoration:none">
+			      <img class="media-object" src="img/evacuation64.png" alt="ひなんばしょ">
+			    </a>
+			  </div>
+			  <div class="media-body">
+			    <h4 class="media-heading">ひなんばしょをかくにんしょう</h4>
+			    いざという時に にげるばしょ を確認しておこう
+			  </div>
+			</div>
+            <div class="apple_overlay" id="overlay">
+                <div class="contentWrap"></div>
+            </div>
+
+
+		</div>
+		<div class="col-md-7">
+			<p>じたくのじゅうしょ：<input type="text"></p>
+			<p><a href="http://www.google.co.jp/"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>かぞくでひなんろをつくろう</a></p>
+
+		  	<input type="text" class="form-control" placeholder="">
+		  	<div id="evacuation"></div>
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="addEvacuation();"></span>
+		</div>
+		<!-- <div class="col-md-2"></div> -->
+	</div>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	function addChecklist()
+	{
+	    var div_element = document.createElement("div");
+	    div_element.innerHTML = '<input type="text" class="form-control" placeholder="">';
+	    var parent_object = document.getElementById("checklist");
+	    parent_object.appendChild(div_element);
+	}
+	function addContact()
+	{
+	    var div_element = document.createElement("div");
+	    div_element.innerHTML = '<input type="text" class="form-control" placeholder="">';
+	    var parent_object = document.getElementById("contact");
+	    parent_object.appendChild(div_element);
+	}
+	function addEvacuation()
+	{
+	    var div_element = document.createElement("div");
+	    div_element.innerHTML = '<input type="text" class="form-control" placeholder="">';
+	    var parent_object = document.getElementById("evacuation");
+	    parent_object.appendChild(div_element);
+	}
+
+
+    $(function() { // overlay
+      $("a[rel]").overlay({
+
+        mask: 'gray',
+        effect: 'apple',
+
+        onBeforeLoad: function() {
+
+        var wrap = this.getOverlay().find(".contentWrap");
+
+        wrap.load(this.getTrigger().attr("href"));
+      }
+
+    }); // overlay
+	});
+
+
+	</script>
+	</body>
+
