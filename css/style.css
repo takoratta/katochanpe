@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+ 
+body {
+    font-family: 'Noto Sans Japanese', serif;
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+}
+
+#syousai{
+	width: 100%;
+}
+
+.block1{
+    background-color: #3ebbd3;
+    height: 200px;
+}
+.block2{
+    background-color: #3e89d3;
+    height: 200px;
+}
+
+.modal_path{
+	position: fixed;
+	bottom: 5%;
+	left: 5%;
+    height: 90%;
+    width: 90%;
+    background-color: #FFFFFF;
+	border: 1px solid black;
+    /*margin: 0 auto;*/
+    padding: 5% 5%;
+    overflow: scroll;
+}
+.modal_path .read_pics{
+	height: 5%;
+	width: 100%;
+}
+.submit_pic{
+	margin-top: 0.5em;
+    width: 100%;
+}
+
+/* 説明入力エリア */
+.modal_path .show_pics{
+	height: 70%;
+	width: 100%;
+
+}
+#syncer-result{
+	padding: 0% 5%;
+}
+#syncer-result .row{
+	margin-bottom: 1em;
+}
+
+#syncer-result img{
+	width: 100px;
+	height: 100px;
+}
+#syncer-result input{
+	width: 70%;
+	height: 30%;
+	margin: 5%;
+}
+
+/* 経路エリア */
+.modal_path .maps{
+	height: 400px;
+	width: 100%;
+}
+.modal_path .maps .maps_content{
+	background-image: url('../img/path_sample.png');
+	height: 380px;
+    /* width: 100%; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+
+/* 完了エリア */
+.modal_path .finish{
+	width: 100%;
+}
+
+
+
+.jumbotron{
+	background-image: url('../img/view_hiyoriyama.jpg');
+	height: 400px;
+	background-size: cover;
+	background-position: center center;
+	color: white;
+	text-shadow: 0px 0px 5px #000;
+	padding-left: 1em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-top: -20px;
+}
+.jumbotron h3{
+	letter-spacing: 0.40em;
+}
+.jumbotron p{
+	font-size: 1em;
+	width: 60%;
+}
+.jumbotron button{
+    font-family: 'Noto Sans Japanese', serif;
+	text-shadow: 0px 0px 0px #000;
+}
+.jumbotron .entry{
+	padding-left: 0px;	
+}
